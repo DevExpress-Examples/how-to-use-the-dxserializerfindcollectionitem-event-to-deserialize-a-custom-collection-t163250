@@ -1,0 +1,47 @@
+﻿<XtraSerializer version="1.0" application="GridControl">
+  <property name="#LayoutVersion" isnull="true" />
+  <property name="$GridControl" iskey="true" value="GridControl">
+    <property name="GroupCount">0</property>
+    <property name="TotalSummary" iskey="true" value="0" />
+    <property name="GroupSummary" iskey="true" value="0" />
+    <property name="View" isnull="true" iskey="true">
+      <property name="ShowFixedTotalSummary">true</property>
+      <property name="ColumnChooserState" isnull="true" iskey="true">
+        <property name="Location">281,33</property>
+        <property name="Size">220,250</property>
+      </property>
+      <property name="FadeSelectionOnLostFocus">false</property>
+    </property>
+    <property name="SortInfo" iskey="true" value="0" />
+    <property name="Columns" iskey="true" value="2">
+      <property name="Item1" isnull="true" iskey="true">
+        <property name="Name">idColumn</property>
+        <property name="VisibleIndex">0</property>
+        <property name="FieldName">ID</property>
+        <property name="ActualWidth">NaN</property>
+      </property>
+      <property name="Item2" isnull="true" iskey="true">
+        <property name="SomeCollection" iskey="true" value="3">
+          <property name="Item1" isnull="true" iskey="true">
+            <property name="ItemID">sdf</property>
+            <property name="ItemValue">32</property>
+          </property>
+          <property name="Item2" isnull="true" iskey="true">
+            <property name="ItemID">sdf12</property>
+            <property name="ItemValue">34324xcv</property>
+          </property>
+          <property name="Item3" isnull="true" iskey="true">
+            <property name="ItemID">sdf234</property>
+            <property name="ItemValue">32</property>
+          </property>
+        </property>
+        <property name="Name">nameColumn</property>
+        <property name="VisibleIndex">1</property>
+        <property name="FieldName">Name</property>
+        <property name="ActualWidth">NaN</property>
+      </property>
+    </property>
+    <property name="MRUFilters" iskey="true" value="0" />
+    <property name="GroupSummarySortInfo" iskey="true" value="0" />
+  </property>
+</XtraSerializer>

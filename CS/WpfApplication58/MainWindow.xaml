@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        xmlns:local="clr-namespace:WpfApplication58"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        x:Class="WpfApplication58.MainWindow"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Content="Save" Click="saveButton_Click" Name="saveButton"/>
+            <Button Content="Load" Click="loadButton_Click" Name="loadButton"/>
+            <TextBlock Text="ItemID:"/>
+            <TextBox Name="propATextBox" Text="{Binding ElementName=nameColumn, Path=SomeCustomProperty.PropertyA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="100"/>
+            <TextBlock Text="ItemValue:"/>
+            <TextBox Name="propBTextBox" Text="{Binding ElementName=nameColumn, Path=SomeCustomProperty.PropertyB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="100"/>
+            <Button Content="Add" Click="addButton_Click" Name="addButton"/>
+            <Button Content="Clear" Click="clearButton_Click" Name="clearButton"/>
+        </StackPanel>
+        <dxg:GridControl AutoPopulateColumns="True" x:Name="grid" Margin="0,20,0,0" dx:DXSerializer.StoreLayoutMode="All">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="ID"  Name="idColumn"/>
+                <local:MyGridColumn FieldName="Name" x:Name="nameColumn">
+                    <local:MyGridColumn.HeaderCustomizationAreaTemplate>
+                        <DataTemplate>
+                            <ListBox ItemsSource="{Binding Column.SomeCollection}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding ItemID}"/>
+                                            <TextBlock Margin="4,0,0,0" Text="{Binding ItemValue}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <!--<StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Column.SomeCustomProperty.PropertyA}"/>
+                                <TextBlock Text="{Binding Column.SomeCustomProperty.PropertyB}" Margin="2,0,0,0"/>
+                            </StackPanel>-->
+                        </DataTemplate>
+                    </local:MyGridColumn.HeaderCustomizationAreaTemplate>
+                </local:MyGridColumn>
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView ShowFixedTotalSummary="True" Name="view" FadeSelectionOnLostFocus="False"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+    </Grid>
+</Window>
