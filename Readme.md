@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/WpfApplication58/MainWindow.xaml)
+* [MainWindow.xaml.cs](./CS/WpfApplication58/MainWindow.xaml.cs)
+<!-- default file list end -->
 # How to use the DXSerializer.FindCollectionItem event to deserialize a custom collection
 
 
